@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import { Map, Marker, GoogleApiWrapper } from "google-maps-react";
 import "../styles.css";
 import gql from "graphql-tag";
 import Loader from "react-loader-spinner";
@@ -78,7 +78,10 @@ function MapPage(props) {
       <div className="map-view">
         <Map
           google={props.google}
-          onReady={getLocationContents}
+          onReady={() => {
+            props.client.cache.reset();
+            getLocationContents();
+          }}
           zoom={10}
           center={{
             lat: locations[0] ? locations[0].latitude : 5.9101,

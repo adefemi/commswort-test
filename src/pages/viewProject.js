@@ -68,6 +68,7 @@ function ViewProject(props) {
   };
 
   useState(() => {
+    props.client.cache.reset();
     getProjectContents();
   }, []);
 
