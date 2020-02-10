@@ -39,6 +39,7 @@
 
 # CMake
 cmake-build-*/
+/.idea
 
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
@@ -246,7 +247,6 @@ $RECYCLE.BIN/
 **/.sass-cache
 **/.sass-cache/*
 **.sass-cache**
-**.css.map
 .pnp.js
 
 # testing
@@ -267,6 +267,7 @@ yarn-debug.log*
 yarn-error.log*
 
 src/**/*.css
+src/**/*.scss
 src/**/*.css.map
 
 .vscode
